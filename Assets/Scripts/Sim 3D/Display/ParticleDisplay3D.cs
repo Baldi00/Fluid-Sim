@@ -37,7 +37,7 @@ public class ParticleDisplay3D : MonoBehaviour
     {
 
         UpdateSettings();
-        Graphics.DrawMeshInstancedIndirect(mesh, 0, mat, bounds, argsBuffer);
+        Graphics.DrawMeshInstancedIndirect(mesh, 0, mat, bounds, argsBuffer, 0, null, UnityEngine.Rendering.ShadowCastingMode.Off, false, LayerMask.NameToLayer("Water"));
     }
 
     void UpdateSettings()

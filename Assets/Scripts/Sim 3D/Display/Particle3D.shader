@@ -4,7 +4,7 @@ Shader "Instanced/Particle3D" {
 	}
 	SubShader {
 
-		Tags {"Queue"="Geometry" }
+		Tags {"Queue"="Transparent" }
 
 		Pass {
 
@@ -60,7 +60,7 @@ Shader "Instanced/Particle3D" {
 				float shading = saturate(dot(_WorldSpaceLightPos0.xyz, i.normal));
 				shading = (shading + 0.6) / 1.4;
 				//return float4(i.normal * 0.5 + 0.5, 1);
-				return float4(i.colour * shading, 1);
+				return float4((i.normal+1)/2,1);
 			}
 
 			ENDCG
